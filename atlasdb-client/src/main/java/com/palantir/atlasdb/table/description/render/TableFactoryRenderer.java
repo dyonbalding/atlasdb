@@ -106,7 +106,7 @@ public class TableFactoryRenderer {
     }
 
     private List<FieldSpec> getFields() {
-        ArrayList<FieldSpec> results = new ArrayList();
+        ArrayList<FieldSpec> results = new ArrayList<>();
 
         TypeName functionOfTransactionAndTriggersType = ParameterizedTypeName.get(
                 ClassName.get(Function.class),
@@ -125,7 +125,7 @@ public class TableFactoryRenderer {
     }
 
     private List<TypeSpec> getSubTypes() {
-        ArrayList<TypeSpec> results = new ArrayList();
+        ArrayList<TypeSpec> results = new ArrayList<>();
         results.add(getSharedTriggers());
         results.add(getNullSharedTriggers(sharedTriggersType));
 
@@ -133,7 +133,7 @@ public class TableFactoryRenderer {
     }
 
     private List<MethodSpec> getConstructors() {
-        ArrayList<MethodSpec> results = new ArrayList();
+        ArrayList<MethodSpec> results = new ArrayList<>();
 
         TypeName functionOfTransactionAndTriggersType = ParameterizedTypeName.get(
                 ClassName.get(Function.class),
