@@ -112,14 +112,14 @@ public class TableFactoryRenderer {
                 ClassName.get(Function.class),
                 WildcardTypeName.supertypeOf(Transaction.class), sharedTriggersType);
 
-        results.add(FieldSpec.builder(Namespace.class, "namespace")
-                .addModifiers(Modifier.PRIVATE, Modifier.FINAL)
-                .build());
+        results.add(getDefaultNamespaceField());
         results.add(FieldSpec.builder(ParameterizedTypeName.get(
                 ClassName.get(List.class), functionOfTransactionAndTriggersType), "sharedTriggers")
                 .addModifiers(Modifier.PRIVATE, Modifier.FINAL)
                 .build());
-        results.add(getDefaultNamespaceField());
+        results.add(FieldSpec.builder(Namespace.class, "namespace")
+                .addModifiers(Modifier.PRIVATE, Modifier.FINAL)
+                .build());
 
         return results;
     }

@@ -14,9 +14,9 @@ import javax.annotation.Generated;
 public final class CheckAndSetSchemaTableFactory {
   private static final Namespace defaultNamespace = Namespace.create("default", Namespace.UNCHECKED_NAME);
 
-  private final Namespace namespace;
-
   private final List<Function<? super Transaction, SharedTriggers>> sharedTriggers;
+
+  private final Namespace namespace;
 
   private CheckAndSetSchemaTableFactory(List<Function<? super Transaction, SharedTriggers>> sharedTriggers,
       Namespace namespace) {
